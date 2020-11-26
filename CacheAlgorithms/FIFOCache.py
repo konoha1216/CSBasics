@@ -1,6 +1,7 @@
 from CacheAlgorithms.DoubleLinkedList import DoubleLinkedList, Node
 
 class FIFOCache(object):
+
     def __init__(self, capacity):
         self.capacity = capacity
         self.size = 0
@@ -9,10 +10,10 @@ class FIFOCache(object):
 
     def get(self, key):
         if key not in self.map:
-            return "don't contain this key"
+            return "don't contain this key: "+str(key)
         else:
             node = self.map.get(key)
-            return node.value
+            return "this is the value of the input key: "+ str(node.value)
 
     def put(self, key, value):
         if self.capacity==0:
@@ -45,7 +46,7 @@ if __name__ == '__main__':
     print(cache.get(1))
     cache.put(3,3)
     cache.print()
-    print(cache.get(2))
+    print(cache.get(1))
     cache.print()
     cache.put(4,4)
     cache.print()
